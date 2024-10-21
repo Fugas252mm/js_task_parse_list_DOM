@@ -4,12 +4,14 @@ const transformToNumber = (str) => {
   return parseFloat(str.replace(/[$,]/g, ''));
 };
 const getEmployees = (list) => {
-  return list.map((employee) => {
+  const result = list.map((employee) => {
     return {
       name: employee.textContent.trim(),
       salary: transformToNumber(employee.getAttribute('data-salary')),
     };
   });
+
+  return SortList(result);
 };
 const SortList = (list) => {
   return list.sort((a, b) => b.salary - a.salary);
