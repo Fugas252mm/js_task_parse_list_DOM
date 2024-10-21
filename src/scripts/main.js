@@ -18,8 +18,5 @@ const SortList = (list) => {
 };
 
 const employeesArray = Array.from(document.querySelectorAll('ul li'));
-const employeesData = employeesArray.map((employee) => {
-  getEmployees(employee);
-});
 
-SortList(employeesData);
+getEmployees(employeesArray);
